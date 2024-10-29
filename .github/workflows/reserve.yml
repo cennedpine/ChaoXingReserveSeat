@@ -26,12 +26,11 @@ jobs:
           pip install cryptography requests opencv-python
           pip install numpy
           pip install opencv-python
-          pip install numpy, opencv-python
       - name: run script
         env:
           USERNAMES: ${{ secrets.USERNAMES }}
           PASSWORDS: ${{ secrets.PASSWORDS }}
         run: |
-          python main.py -m debug --action
+          python main.py 
 
 
