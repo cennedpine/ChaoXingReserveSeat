@@ -60,7 +60,7 @@ class reserve:
         response = self.requests.get(url=url, verify=False)
         html = response.content.decode('utf-8')
         token = re.findall(
-            'token: \'(.*?)\'', html)[0] if len(re.findall('token: \'(.*?)\'', html)) > 0 else ""
+           r"token: '([^']*)'", html)[0] if re.findall(r"token: '([^']*)'", html) else ""
         return token
 
     def get_login_status(self):
